@@ -1,0 +1,250 @@
+/*   style  */
+
+* {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+.nav1 {
+    font-family: 'Poppins', sans-serif;;
+    width: 100%;
+    height: 60px;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 60px;
+    background-color: #3d3d3d;
+    color:white;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav1 .logo a{
+    text-decoration: none;
+    color:white;
+    background-color: coral;
+    padding: 4px 8px 4px 8px !important;
+    border-radius: 5px;
+}
+.nav1 #search {
+    cursor: pointer;
+}
+/* nền search box*/
+.backdrop {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 200% !important;
+    background: black;
+    opacity: .40;
+    filter: alpha(opacity=50);
+    z-index: 50;
+    display: none;
+}
+ /* search box*/
+.search-box {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    width: 80%;
+    height: 210px;
+    background-color: white;
+    z-index: 51;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #444444;
+    display: none;
+}
+
+.search-box > label {
+    height: 40px;
+    margin-top: 10px !important;
+    display: block;
+    margin-left: 10% !important;
+}
+.search-box > input {
+    display: block;
+    width: 80%;
+    height:30px;
+    margin-left: 10% !important;
+    border-radius: 5px;
+}
+.search-box button {
+    position: absolute;
+    height: 30px;
+    width: 80px;
+    bottom: 10px;
+    right: 10%;
+    border-radius: 5px;
+}
+/* lọc ngày tháng */
+.input-date {
+    width: 80%;
+    margin-top: 30px !important;
+    margin-left: 10% !important;
+    word-spacing: 10px;
+    
+}
+.input-date > input{
+    height: 30px;
+    width: 39%;   
+}
+
+.close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+
+#main {
+    margin-top: 30px;
+}
+/* bieu tuong cho */
+.loader{
+	width: 100%;
+	height: 100%;
+    text-align: center;
+    font-size: 50px;
+    color:cornflowerblue;
+    margin-top: 50px !important;
+}
+
+.xoay{
+	animation: xoay 1.5s linear infinite;
+	-moz-animation: xoay 1.5s linear infinite;
+	-ms-animation: xoay 1.5s linear infinite;
+	-o-animation: xoay 1.5s linear infinite;
+	-webkit-animation: xoay 1.5s linear infinite;
+}
+@keyframes xoay{
+	from{
+		-ms-transform:rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	to{
+		-ms-transform:rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+#main img {
+    height: 178px;
+}
+#content .content-text {
+    padding: 20px 10px 0px 30px !important;
+}
+
+.wait-load {
+    text-align: center;
+}
+.wait {
+    text-align: center;
+    display: block;
+
+}
+
+#sideNavigation {
+    position: absolute;
+    top: 60px;
+    background: #3d3d3d;
+    opacity: 0.9;
+}
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #3d3d3d;
+    overflow-x: hidden; /* tắt cuộc ngang*/
+    padding-top: 60px;
+    transition: 0.5s;
+}
+/* The navigation menu links */
+.sidenav a {
+    padding: 20px 8px 8px 32px !important;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+ 
+/* hover sidebarr */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+ 
+/* di chuyển nội dung trang sang bên phải theo sidebar */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+    overflow:hidden;
+    width:100%;
+}
+body {
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 767px) {
+    .search-box {
+        position: absolute;
+        top: 15%;
+        left: 5%;
+        width: 90%;
+        height: 200px;
+        background-color: white;
+        z-index: 51;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px #444444;
+        display: none;
+    }
+    .search-box > label {
+        display: block;
+        line-height: 40px;
+        margin-left: 5% !important;
+    }
+    .search-box > input {
+        display: block;
+        margin: 0px 5% !important;
+        height: 30px;
+        width: 90%;
+        border-radius: 5px;
+    }
+    .search-box button {
+        position:absolute;
+        bottom: 10px;
+        right: 20px;
+        height: 30px;
+        width: 80px;
+        border-radius: 5px;
+    }
+    /* tim kiem theo ngay */
+    .input-date {
+        margin-top: 10px !important;
+        margin-left: 5% !important;
+        word-spacing: 5px;   
+    }
+    .input-date > input{
+        margin-top: 20px !important;
+        height: 30px;
+        width: 30%; 
+    }
+    
+    .close {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+        border-radius: 1px;
+    }
+}
