@@ -14,7 +14,7 @@ $(function() {
     });
 
     $.ajax({
-        url: "https://gnews.io/api/v4/top-headlines?&max=4&token=39f234bb19b1dfcf90af7fa730dc7af1&lang=en",
+        url: "https://gnews.io/api/v4/top-headlines?&max=10&token=39f234bb19b1dfcf90af7fa730dc7af1&lang=en",
         dataType: 'json',
         type: "get",
         cache: false,
@@ -55,7 +55,7 @@ $(function() {
         var key = $("#search-input").val();
 
         var endpoint = "https://gnews.io/api/v4/search?q=" + key + "&from=" + startDate + "T00:00:00Z&to=" +
-                        endDate + "T00:00:00Z&max=4&token=39f234bb19b1dfcf90af7fa730dc7af1&lang=en";
+                        endDate + "T00:00:00Z&max=10&token=39f234bb19b1dfcf90af7fa730dc7af1&lang=en";
         fetch(endpoint)
         .then(function (response) {
             return response.json();
@@ -96,7 +96,7 @@ $(function() {
             var key = $("#search-input").val();
 
             var endpoint = "https://gnews.io/api/v4/search?q=" + key + "&from=" + startDate + "T00:00:00Z&to=" +
-                        endDate + "T00:00:00Z&max=4&token=39f234bb19b1dfcf90af7fa730dc7af1&lang=en";
+                        endDate + "T00:00:00Z&max=10&token=39f234bb19b1dfcf90af7fa730dc7af1&lang=en";
             fetch(endpoint)
             .then(function (response) {
                 // thay đổi kiểu trả về là json
@@ -149,7 +149,7 @@ $(function() {
 
         $("#content").html("");
 
-        var url = "https://gnews.io/api/v4/top-headlines?&max=4&token=39f234bb19b1dfcf90af7fa730dc7af1&lang=en";
+        var url = "https://gnews.io/api/v4/top-headlines?&max=10&token=39f234bb19b1dfcf90af7fa730dc7af1&lang=en";
         fetch(url)
         .then(function (response) {
             // thay đổi kiểu trả về là json
