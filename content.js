@@ -12,9 +12,9 @@ $(function() {
         type: "get",
         cache: false,
         success: function(data) {
+
             $("#content").html("");
             $('.loader').fadeIn('fast');
-
             // ghi dữ liệu ra website
             $(data.articles).each(function(index,values) {
                 $("#content").append(
@@ -43,8 +43,8 @@ $(function() {
     $("#search-btn").click(function() {
         // xóa nội dung cũ
         $("#content").html("");
+        // hiển thị biểu tượng load mỗi khi load nội dung trang
         $('.loader').fadeIn('fast');
-
         //lấy giá trị từ ô  input
         var startDate = new Date($("#start-date").val()).toISOString().substring(0,10);
         var endDate = new Date($("#end-date").val()).toISOString().substring(0,10);
@@ -57,6 +57,7 @@ $(function() {
             return response.json();
         })
         .then(function (data) {
+            
             $(data.articles).each(function(index,values) {
                 $("#content").append(
                     '<div class="row mt-3 mb-3 border">' +
@@ -70,9 +71,11 @@ $(function() {
                         '</div>' +
                     '</div>'
                 );
+
+                
             });
+            $('.loader').delay(1000).fadeOut('fast');
         });
-        $('.loader').delay(1000).fadeOut('fast');
 
         // tắt hộp thoại tìm kiếm khi tìm xong
         $(".backdrop, .search-box").css("display", "none");
@@ -87,7 +90,6 @@ $(function() {
             // xóa nội dung cũ
             $("#content").html("");
             $('.loader').fadeIn('fast');
-            
             //lấy giá trị từ ô  input
             var startDate = new Date($("#start-date").val()).toISOString().substring(0,10);
             var endDate = new Date($("#end-date").val()).toISOString().substring(0,10);
@@ -116,9 +118,9 @@ $(function() {
                         '</div>'
                     );
                 });
+                $('.loader').delay(1000).fadeOut('fast');
             });
 
-            $('.loader').delay(1000).fadeOut('fast');
             // tắt hộp thoại tìm kiếm khi tìm xong
             $(".backdrop, .search-box").css("display", "none");
         }
@@ -170,9 +172,9 @@ $(function() {
                     '</div>'
                 );
             });
+            $('.loader').delay(1000).fadeOut('fast');
         });
 
-        $('.loader').delay(1000).fadeOut('fast');
         $('#sideNavigation').css("width", "0px");
     });
 });
