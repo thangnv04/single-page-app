@@ -6,13 +6,6 @@ $(function() {
     $("#start-date").val(local);
     $("#end-date").val(local);
     
-    
-    // hiệu ứng chờ load content
-    $(window).on('load', function(event) {
-        $('body').removeClass('preloading');
-        $('.loader').delay(1000).fadeOut('fast');
-    });
-
     $.ajax({
         url: "https://gnews.io/api/v4/top-headlines?&max=10&token=39f234bb19b1dfcf90af7fa730dc7af1&lang=en",
         dataType: 'json',
@@ -20,6 +13,7 @@ $(function() {
         cache: false,
         success: function(data) {
             $("#content").html("");
+            $('.loader').fadeIn('fast');
 
             // ghi dữ liệu ra website
             $(data.articles).each(function(index,values) {
@@ -36,6 +30,7 @@ $(function() {
                     '</div>'
                 );
             });
+            $('.loader').delay(1000).fadeOut('fast');
         }
     });
 
@@ -48,6 +43,7 @@ $(function() {
     $("#search-btn").click(function() {
         // xóa nội dung cũ
         $("#content").html("");
+        $('.loader').fadeIn('fast');
 
         //lấy giá trị từ ô  input
         var startDate = new Date($("#start-date").val()).toISOString().substring(0,10);
@@ -76,6 +72,7 @@ $(function() {
                 );
             });
         });
+        $('.loader').delay(1000).fadeOut('fast');
 
         // tắt hộp thoại tìm kiếm khi tìm xong
         $(".backdrop, .search-box").css("display", "none");
@@ -89,6 +86,7 @@ $(function() {
         if (keycode == '13') {
             // xóa nội dung cũ
             $("#content").html("");
+            $('.loader').fadeIn('fast');
             
             //lấy giá trị từ ô  input
             var startDate = new Date($("#start-date").val()).toISOString().substring(0,10);
@@ -120,6 +118,7 @@ $(function() {
                 });
             });
 
+            $('.loader').delay(1000).fadeOut('fast');
             // tắt hộp thoại tìm kiếm khi tìm xong
             $(".backdrop, .search-box").css("display", "none");
         }
@@ -148,6 +147,7 @@ $(function() {
     $("#list-item1").click(function() {
 
         $("#content").html("");
+        $('.loader').fadeIn('fast');
 
         var url = "https://gnews.io/api/v4/top-headlines?&max=10&token=39f234bb19b1dfcf90af7fa730dc7af1&lang=en";
         fetch(url)
@@ -172,6 +172,7 @@ $(function() {
             });
         });
 
+        $('.loader').delay(1000).fadeOut('fast');
         $('#sideNavigation').css("width", "0px");
     });
 });
